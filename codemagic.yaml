@@ -5,6 +5,6 @@ workflows:
     scripts:
       - name: Build the app
         script: |
-          xcodebuild -workspace IESMusicallyIvan.xcworkspace -scheme IESMusicallyIvan -sdk iphoneos -configuration Release
+          xcodebuild -workspace IESMusicallyIvan.xcworkspace -scheme IESMusicallyIvan -sdk iphoneos26.0 -configuration Release
     artifacts:
       - build/ios/ipa/IESMusicallyIvan.ipa
