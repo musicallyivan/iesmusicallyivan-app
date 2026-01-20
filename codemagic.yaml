@@ -1,0 +1,20 @@
+workflows:
+  ios:
+    name: IES MusicallyIvan
+    max_build_duration: 60
+    environment:
+      vars:
+        - MY_VARIABLE: "value"
+    scripts:
+      - name: Install dependencies
+        script: |
+          brew install cocoapods
+          pod install
+      - name: Build the app
+        script: |
+          xcodebuild -workspace MyApp.xcworkspace -scheme MyApp -sdk iphoneos -configuration Release
+    artifacts:
+      - build/ios/ipa/IESMusicallyIvan.ipa
+    publish:
+      branches:
+        - main
